@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>event preventDefault 終止「預設」行為</title>
+</head>
+
+<body>
+
+    <!-- 1. 提供一個可以讓使用者輸入的地方 -->
+    <p>請輸入小寫英文</p>
+    <form>
+        <input type="text" id="inputNum" onkeypress="chkNumber(event)" />
+    </form>
+
+    <script>
+        // 2. 限制使用者只能輸入小寫英文
+        function chkNumber(e) {
+            var code = e.charCode;
+            if (code != 0) {
+                if (code < 97 || code > 122) {
+                    e.preventDefault();
+                    alert("請輸入小寫英文");
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

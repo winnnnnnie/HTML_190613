@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>capoo</title>
+
+    <style type="text/css">
+        #cat {
+            /* 在這個範例中，只要position不是static或者fixed都可以 */
+            position: absolute;
+        }
+    </style>
+
+</head>
+
+<!-- 1. 幫body掛一個 onkeydown 事件 -->
+<body>
+
+    <img id="cat" src="img/capoo.gif">
+
+    <script>
+        // 2. 取得 #cat 這個元素
+
+        // 3. 撰寫讓 # cat 移動的方法
+        // 3-1. 先知道user在是點選上下左右哪一顆按鍵
+        // 3-2. 取得網頁中css樣式的方法：window.getComputedStyle(想要取得的元素);
+        // 3-3. 透過3-2拿到的style物件，找尋指定的css樣式屬性：style.getPropertyValue(指定的樣式屬性);
+        // 3-4. 配合user的操作，設定 #cat 移動的方向 => 注意單位陷阱
+
+    </script>
+</body>
+
+</html>
