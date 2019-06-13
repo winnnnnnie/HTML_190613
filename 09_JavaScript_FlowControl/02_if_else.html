@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>FlowControl</title>
+  <meta charset="UTF-8">
+  <title>FlowControl</title>
 </head>
 
 <body>
-    <p><a href="https://www.w3schools.com/js/js_if_else.asp" target="_blank">if else</a></p>
-    <pre>
+  <p><a href="https://www.w3schools.com/js/js_if_else.asp" target="_blank">if else</a></p>
+  <pre>
         if (condition1) {
           //  block of code to be executed if condition1 is true
         } else if (condition2) {
@@ -20,13 +21,48 @@
         variablename = (condition) ? value1:value2
    </pre>
 
-    <script>
-        // 1. 取得系統現在時間(HH)
-        // 2. 如果是 8:00-11:59，顯示上午課程
-        // 3. 如果是 12:00-12:59，顯示中午用餐時間
-        // 4. 如果是 13:00-16:00，顯示下午課程
-        // 5. 其他的時段，顯示非課程時間
-        // 6. 使用三元運算子，判斷12點以前為AM，否則為PM
-        
-    </script>
-</body></html>
+  <script>
+    // 1. 取得系統現在時間(HH)
+    var d = new Date();
+    var hh = d.getHours();
+    console.log(hh); //13
+
+    // 2. 如果是 8:00-11:59，顯示上午課程
+    if (8 <= hh && hh <= 11) {
+      console.log("上午課程");
+    } else if (hh == 12) {
+      console.log("中午用餐時段");
+    } else if (13 <= hh && hh <= 16) {
+      console.log("下午課程");
+    } else {
+      console.log("下課囉");
+    };
+
+
+    // 3. 如果是 12:00-12:59，顯示中午用餐時間
+    // 4. 如果是 13:00-16:00，顯示下午課程
+    // 5. 其他的時段，顯示非課程時間
+    // 6. 使用三元運算子，判斷12點以前為AM，否則為PM
+    var result1;
+    if (hh<=12) 
+    {
+      result = "am";
+    } else 
+    {
+      result = "pm";
+    }
+    console.log(result1);
+
+    //====
+
+    var result = hh <= 12 ? "am" : "pm";//判斷式? true : false
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -10,15 +10,18 @@
 
     <p>點選圖片變化人物~</p>
 
-    <img id="imgOP" onclick="changeImage()" src="../02_HTML_Table/img/01.jpg">
+    <img id="imgOP" onclick="changeImage()" src="../../HTML_190611/02_HTML5/img/op_01.jpg">
 
     <script>
         function changeImage() {
             // 1. 取得網頁中imgOP元素
+            var temp = document.getElementById("imgOP");
 
             // 2. 將圖片改為布魯克
+            temp.src = "img/window.png";
 
             // 3. 步驟一和二可以合併寫成
+            document.getElementById("imgOP").temp.src = "img/window.png"; 
 
         }
 

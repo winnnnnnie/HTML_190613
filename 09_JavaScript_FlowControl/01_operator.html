@@ -8,8 +8,9 @@
 <body>
 
     <p><a href="http://www.w3schools.com/js/js_operators.asp" target="_blank">運算子清單</a></p>
-
+     <p>1</p>
     <script>
+        document.getElementById("p1").textContent;
         // 算術類
         var a = 10;
         var b = 3;
@@ -22,13 +23,28 @@
         var z = 4;
 
         // 2. == 和 === 的差異在?
+         if( x === y ){
+             console.log(" x === y ");
+         }
+
 
         // 邏輯判斷類
         // 3. 不等於的寫法 (!=)
+         
+         if( x!=z ){
+             console.log(" x!=z ");
+
+         }
 
         // 4. and (&&) 條件需要同時成立的時候
-        
+        if( x==10 && z==4 ){
+            console.log(" x==10 && z==4 ");
+        }
         // 5. or (||) 條件擇一成立
+
+        if( x==10 || z==8 ){
+            console.log(" x==10 || z==8 ");
+        }
     </script>
 
 </body></html>

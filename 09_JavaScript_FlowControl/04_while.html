@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>FlowControl</title>
@@ -13,8 +14,51 @@
         }
     </pre>
     <script>
-        // 網頁必須輸入通關密碼1234才會停止
 
+
+       var flag = true;
+
+        while (flag) {
+       // 網頁必須輸入通關密碼1234才會停止
+        var pass = prompt("通關密碼", "");
+        if (pass == "1234") {
+            flag = false;
+            // console.log("ok");
+
+        }
+}
         // 判斷目前的數值是從1加到?
+        var tot = 6;
+        var cnt = 1;
+        var str = "";
+        while( tot>0 ){
+            tot = tot - cnt; // tot = 6-1;
+            str = str + cnt + "+";
+            cnt = cnt + 1;
+            
+            var pass = ("")
+
+            //tot = 6 - 1 = 5;
+            //cny = 2
+            //str = str + 
+
+            //tot = 5 - 2 = 3;
+            //cny = 3
+            //str = str + "2+"
+
+            //tot = 3 - 3 = 0;
+            //cny = 4
+
+            //tot = 0 - 4 = -4;
+            //cny = 5
+
+
+        }
+        // console.log(" 1加到 " + (cnt-1) + "的結果"); 
+        console.log(str.substr(0,str.length-1) + "=6"); 
+
+
     </script>
-</body></html>
+</body>
+
+</html>
