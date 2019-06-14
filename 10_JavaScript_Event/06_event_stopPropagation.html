@@ -12,7 +12,32 @@
     <!-- 2. 撰寫一個 <p>，點選後再 console.log 寫下一些訊息，且包住步驟一的 <button> -->
     <!-- 3. 撰寫一個 <div>，點選後再 console.log 寫下一些訊息，且包住步驟二的 <p> -->
     <!-- 4. 觀察 console.log 發生了什麼事情? -->
-  
+
+
+
+    <div onclick="divClick()" style="background-color: blue;" >
+        <p onclick="pClick()" style="background-color: red; width: 300px;">
+            <button onclick="btnClick(event)">按鈕在此</button>
+        </p>
+    </div>
+
+
+    <script>
+        function divClick() {
+            console.log("divClick");
+
+        }
+        function pClick() {
+            console.log("pClick");
+
+        }
+        function btnClick(e) {
+            //console.log(e);
+            console.log("buttonClick");
+            e.stopPropagation();
+        }
+    </script>
+
 </body>
 
 </html>

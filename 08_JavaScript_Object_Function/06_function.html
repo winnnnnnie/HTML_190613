@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Function</title>
@@ -9,16 +10,54 @@
     <p><a href="https://www.w3schools.com/js/js_functions.asp" target="_blank">function</a></p>
     <p>將功能獨立出來，提高程式的可用性</p>
 
+    <p id="result"></p>
+    <button onclick="fun('1')">1</button>
+    <button onclick="fun('2')">2</button>
+    <button onclick="fun('3')">3</button>
+    <button onclick="fun('4')">4</button>
+    <button onclick="fun('5')">5</button>
+
+
+
+
+
     <script type="text/javascript">
-        
+
+
+
+
         // 一般我們使用方式，定義一個有名稱的函式
-        
+        function fun(str) {
+            document.getElementById("result").innerHTML = document.getElementById("result").innerHTML + str;
+
+        }
         // 另外一種function宣告的方式，但要注意，宣告前呼叫程式會死掉
-        
+        // msg("雨很大 - 2"); 宣告前就呼叫會掛掉
+        var msg = function (para) {
+            console.log(para);
+
+        }
+        msg("雨很大 - 2");
+
         // function可以有多個參數傳入，也可以有回傳值
         // 10杯以上打95折
         // 20杯以上打9折
-        
-    </script>
-</body></html>
+        // 12杯$350
+        function amt(inputQty, inputPrice) {
+            var tot = inputPrice;
+            if (inputQty > 10 && inputQty < 20) {
+                tot = inputPrice * 0.95;
+            } else if (inputQty >= 20){
+                tot = inputPrice * 0.9;
+            } 
+            //回傳值
+            return tot ;
 
+        }
+        console.log(amt(30,100));
+    </script>
+
+
+</body>
+
+</html>

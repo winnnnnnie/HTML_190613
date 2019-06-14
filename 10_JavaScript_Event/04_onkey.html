@@ -10,5 +10,36 @@
     <!-- 輸出畫面請參考圖片 -->
     <!-- 會需要的關鍵字：onkeypress 事件、onkeydown事件、event.keyCode、event.charCode -->
 
+    <h3>測試綁定 <i>onkeypress</i> 事件</h3>
+    <input type="text" onkeypress="testKeypress(event)">
+    <p>顯示 keycode: <span id="keyPress1"></span></p>
+    <p>顯示 charcode:<span id="keyPress2"></span></p>
+
+    <hr>
+    <h3>測試綁定 <i> onkeydown </i>事件</h3>
+    <input type="text" onkeypress="testKeyDown(event)">
+    <p>顯示 keycode:<span id="keyDown1"></span></p>
+    <p>顯示 charcode:<span id="keyDown2"></span></p>
+
+
+    <script>
+        //Keypress
+        function testKeypress(obj) {
+            document.getElementById("keyPress1").innerHTML = obj.keyCode;
+            document.getElementById("keyPress2").innerHTML = obj.charCode;
+        }
+        //keyDown
+        function testKeyDown(obj) {
+            document.getElementById("keyDown1").innerHTML = obj.keyCode;
+            document.getElementById("keyDown2").innerHTML = obj.charCode;
+        }
+    </script>
+
+
+
+
+
+
 </body>
+
 </html>

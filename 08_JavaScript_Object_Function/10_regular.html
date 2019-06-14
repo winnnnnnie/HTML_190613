@@ -16,20 +16,42 @@
         // 底下說明來自：https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Regular_Expression：
         // exec	    A RegExp method that executes a search for a match in a string. It returns an array of information or null on a mismatch.
         // test	    A RegExp method that tests for a match in a string. It returns true or false.
-        // match	A String method that executes a search for a match in a string. It returns an array of information or null on a mismatch.
+
+
+
         // search	A String method that tests for a match in a string. It returns the index of the match, or -1 if the search fails.
+        // match	A String method that executes a search for a match in a string. It returns an array of information or null on a mismatch.
         // replace	A String method that executes a search for a match in a string, and replaces the matched substring with a replacement substring.
         // split	A String method that uses a regular expression or a fixed string to break a string into an array of substrings.
 
 
+
         // 試試看，驗證密碼是否有包含至少一位大寫英文，在不知道 Regular Expressions 正規表示式以前，我們可以怎麼寫? 
+        // var password = "12345678A";
+        // for (var i = 0; i < password.length; i++) {
+        //     var temp = password.substring(i, i + 1);
+        //     // console.log(temp);
+
+
+
+        //     // if ( temp! = temp.toLocaleLowerCase ())
+        //     // {
+        //     //     flag = false;
+        //     // }
+
+
+        // }
+
+
+
+
 
 
         // 被「//」夾住的文字，是 正規表示法 的描述
         let patt = /rday/;
         let str = 'Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday';
         console.log(`test 會回傳 true/false值：${patt.test(str)}`);
-        
+
         // exec 方法會回傳一個陣列，透過console.log去查看有些什麼項目
         let obj = patt.exec(str);
         console.log(obj);
@@ -43,15 +65,31 @@
         obj = str.search(patt);
         console.log(obj);
         console.log(`search 會回傳位置，-1表示沒有，0 表示字串的第一個位置 ==> ${obj}`);
-          
+
 
         // 1. 驗證密碼是否有包含至少一位大寫英文
+     
+        patt = /[A-Z]/;
+        var password = "1234567A";
+        console.log(`test 會回傳 true/false值：${patt.test(password)}`);
+
 
         // 2. 驗證輸入的文字是否有包含空白
+        patt = /\s/;
+        var name = "資策      會";
+        console.log(` ${name} 是否有空白:${patt.test(name)}`);
 
         // 3. 驗證身份證字號格式，第一碼是英文，後面是數字；例如：A123456789
 
+        patt = /^[A-Za-z]\d{9}$/;
+        let id = "A123456789";
+        console.log(` ${id} 是否符合:${patt.test(id)}`);
+
+
         // 4. 驗證車牌號碼，假設以 - 分隔，-前會有2-3碼英文，-後會有3-4碼數字
+        patt = /[A-Z]{2,3}-\d{3,4}/;
+        let car = "PTT-0614";
+        console.log(` ${car} 是否符合:${patt.test(car)}`);
 
     </script>
 </body>

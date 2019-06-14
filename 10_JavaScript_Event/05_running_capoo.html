@@ -14,18 +14,53 @@
 </head>
 
 <!-- 1. 幫body掛一個 onkeydown 事件 -->
-<body>
+
+<body onkeydown="moveCapoo(event)">
 
     <img id="cat" src="img/capoo.gif">
 
     <script>
         // 2. 取得 #cat 這個元素
+        var capoo = document.getElementById("cat");
+        function moveCapoo(eve) {
 
-        // 3. 撰寫讓 # cat 移動的方法
-        // 3-1. 先知道user在是點選上下左右哪一顆按鍵
-        // 3-2. 取得網頁中css樣式的方法：window.getComputedStyle(想要取得的元素);
-        // 3-3. 透過3-2拿到的style物件，找尋指定的css樣式屬性：style.getPropertyValue(指定的樣式屬性);
-        // 3-4. 配合user的操作，設定 #cat 移動的方向 => 注意單位陷阱
+            // 3-2. 取得網頁中css樣式的方法：window.getComputedStyle(想要取得的元素);
+            var style = window.getComputedStyle(capoo);
+
+            // 3-3. 透過3-2拿到的style物件，找尋指定的css樣式屬性：style.getPropertyValue(指定的樣式屬性);
+            var capooLeft = style.getPropertyValue('left');
+            var capooTop = style.getPropertyValue('top');
+            console.log("capooLeft:" + capooLeft);
+            console.log("capooTop:" + capooTop);
+        
+            // 3. 撰寫讓 # cat 移動的方法
+
+            // 3-1. 先知道user在是點選上下左右哪一顆按鍵
+            switch (eve.keyCode) {
+                case 37:
+                    // alert("左邊");
+                    capoo.style.left = ( parseInt(capooLeft) - 10 ) + "px";
+                    capoo.style.transform = "rotateY(0deg)";
+                    break;
+
+                case 38:
+                    // alert("上邊");
+                    capoo.style.top = ( parseInt(capooTop) - 10 ) + "px";
+                    break;
+
+                case 39:
+                    // alert("右邊");
+                    // 3-4. 配合user的操作，設定 #cat 移動的方向 
+                    capoo.style.left = ( parseInt(capooLeft) + 10 ) + "px";
+                    capoo.style.transform = "rotateY(180deg)";
+                    break;
+
+                case 40:
+                    // alert("下邊");
+                    capoo.style.top = ( parseInt(capooTop) + 10 ) + "px";
+                    break;
+            }
+        }
 
     </script>
 </body>
